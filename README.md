@@ -1,5 +1,11 @@
 # Scalable Agentic System
 
+A modular Python-based agentic system designed to intelligently route user requests, identify relevant tools, validate parameters, and execute the required APIs without exposing the entire tool ecosystem to the agent.
+
+The prototype demonstrates how an agentic architecture can scale from a small set of tools to hundreds or thousands of APIs through structured routing, tool discovery, relevance-based selection, validation, state management, and controlled execution.
+
+---
+
 ## 1. Overview
 
 This project implements a scalable agentic system that can select and execute the correct tool from a growing set of APIs.
@@ -21,11 +27,19 @@ The architecture also includes:
 - Service/category filtering
 - Top-K tool selection
 
-The design can be extended from a small number of tools to hundreds of APIs without exposing all tools to the agent at the same time.
+The design can be extended from a small number of tools to hundreds or thousands of APIs without exposing all tools to the agent at the same time.
 
 ---
 
-## 2. Problem Statement
+## 2. Architecture
+
+![Scalable Agentic System Architecture](architecture.png)
+
+The architecture follows a modular design where requests are routed, relevant tools are selected, parameters are validated, and the selected tools are executed while maintaining the required state.
+
+---
+
+## 3. Problem Statement
 
 An agentic system may need to work with hundreds or thousands of APIs.
 
@@ -40,11 +54,22 @@ For example:
 
 If every available tool is presented to the agent for every request, tool selection can become inefficient and inaccurate.
 
-This project addresses that problem using routing, category filtering, tool ranking, validation, and controlled execution.
+This project addresses this problem using:
+
+- Query routing
+- Service/category filtering
+- Tool relevance scoring
+- Top-K tool selection
+- Parameter validation
+- Controlled execution
+- Error handling
+- State management
+
+The main objective is to reduce unnecessary tool exposure while ensuring that the agent can identify and execute the appropriate tool for each request.
 
 ---
 
-## 3. Example User Requests
+## 4. Example User Requests
 
 ### Invoice
 
